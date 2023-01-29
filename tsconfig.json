@@ -17,6 +17,9 @@
     "allowJs": true,
     // node or classic
     "moduleResolution": "node",
+    
+    // для абсолютного импорта
+    "baseUrl": ".",
 
     // esModuleInterop позволяет работать с пакетами, которые используют
     // common js как с обычными пакета с помощью import (require() module.export) = common js
@@ -36,7 +39,7 @@
     "allowSyntheticDefaultImports": true,
     
   },
-  
+
   // чтобы простой import some from 'some' работало с файлами ts
   "ts-node": {
     "compilerOptions": {
