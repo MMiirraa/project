@@ -21,7 +21,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     plugins: buildPlugins(options),
     module: {
       // обработка файлов типа png и тд
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     resolve: buildResolvers(),
     devtool: isDev ? 'inline-source-map' : undefined,
