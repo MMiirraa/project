@@ -13,7 +13,7 @@
 
     // во что компилируется
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     // node or classic
     "moduleResolution": "node",
