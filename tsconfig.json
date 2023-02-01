@@ -9,7 +9,7 @@
     "noImplicitAny": true,
 
     // способы модульной сборки
-    "module": "es6",
+    "module": "ESNext",
 
     // во что компилируется
     "target": "es5",
