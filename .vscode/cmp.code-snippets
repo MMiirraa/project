@@ -1,0 +1,30 @@
+{
+	"cc": {
+		"prefix": "cc",
+		"body": [
+      "import React from 'react';",
+      "import { classNames } from 'shared/lib/classNames/classNames';",
+      "import scss from './${1:$TM_FILENAME_BASE}.module.scss'",
+      "",
+      "interface $1Props {",
+        "  className?: string;",
+      "}",
+      "",
+      "export const $1: React.FC<$1Props> = (props: $1Props) => {",
+      "const {",
+      "  className",
+      "  children",
+      "  ...otherProps",
+      "} = props",
+      "",
+      "  return (",
+      "    <div className={classNames(scss.$1, {}, [className])}>",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+    ],
+		"description": "component"
+	}
+}
