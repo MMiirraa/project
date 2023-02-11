@@ -9,19 +9,25 @@ export enum ThemeButton {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?: ThemeButton;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-  const { 
-    className ,
-    children,
-    theme,
-    ...otherProps
-  } = props
+    const {
+        className,
+        children,
+        theme,
+        type = 'button',
+        ...otherProps
+    } = props;
 
-  return (
-    <button className={classNames(scss.Button, {}, [className, scss[theme]])} {...otherProps}>
-      {children}
-    </button>
-  );
+    return (
+        <button
+            type={type}
+            className={classNames(scss.Button, {}, [className, scss[theme]])}
+            {...otherProps}
+        >
+            {children}
+        </button>
+    );
 };
