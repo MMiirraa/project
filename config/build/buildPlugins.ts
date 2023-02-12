@@ -6,7 +6,7 @@ import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
-    // для отображения загрузки лоудера - сборки
+        // для отображения загрузки лоудера - сборки
         new webpack.ProgressPlugin(),
         // использует наш html как образец для build
         new HtmlWebpackPlugin({
