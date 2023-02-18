@@ -13,21 +13,21 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-    const {
-        className,
-        children,
-        theme,
-        type = 'button',
-        ...otherProps
-    } = props;
+  const {
+    className,
+    children,
+    theme,
+    type = 'button',
+    ...otherProps
+  } = props;
 
-    return (
-        <button
-            type={type}
-            className={classNames(scss.Button, {}, [className, scss[theme]])}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    );
+  return (
+    <button
+      type={type}
+      className={classNames(scss.Button, {}, [className, scss[theme]])}
+      {...otherProps}
+    >
+      {children}
+    </button>
+  );
 };

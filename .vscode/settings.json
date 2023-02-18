@@ -1,8 +1,8 @@
 {
     "typescript.tsdk": "node_modules/typescript/lib",
     "i18n-ally.localesPaths": [
-        "public/locales",
-        "src/shared/config/i18n"
+      "public/locales",
+      "src/shared/config/i18n"
     ],
     // "[scss]": {
     //     "editor.defaultFormatter": "vscode.css-language-features"
