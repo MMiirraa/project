@@ -47,7 +47,7 @@
   "include": [
     "./config/jest/setupTests.ts",
     "src/**/*",
-    "src/**/*.json",
-    "test/**/*"
+    // "src/**/*.json",
+    // "test/**/*"
   ]
 }
