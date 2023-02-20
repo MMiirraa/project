@@ -4,21 +4,21 @@ import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 import { PageLouder } from 'widgets/PageLouder/ui/PageLouder';
 
 const AppRouter = () => (
-  <Suspense fallback={<PageLouder />}>
-    <Routes>
-      {
-        Object.values(routeConfig).map(({ path, element }) => (
-          <Route
-            key={path}
-            element={
-              <div className="page-wrapper">{element}</div>
+    <Suspense fallback={<PageLouder />}>
+        <Routes>
+            {
+                Object.values(routeConfig).map(({ path, element }) => (
+                    <Route
+                        key={path}
+                        element={
+                            <div className="page-wrapper">{element}</div>
+                        }
+                        path={path}
+                    />
+                ))
             }
-            path={path}
-          />
-        ))
-      }
-    </Routes>
-  </Suspense>
+        </Routes>
+    </Suspense>
 );
 
 export default AppRouter;

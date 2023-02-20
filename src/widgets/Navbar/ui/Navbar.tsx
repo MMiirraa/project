@@ -8,17 +8,17 @@ interface NavbarProps {
 }
 
 export const Navbar = (props: NavbarProps) => {
-  const {
-    className,
-  } = props;
+    const {
+        className,
+    } = props;
 
-  return (
-    <div className={classNames(scss.Navbar, {}, [className])}>
+    return (
+        <div className={classNames(scss.Navbar, {}, [className])}>
 
-      <div className={scss.links}>
-        <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={scss.mainLink}>Главная</AppLink>
-        <AppLink theme={AppLinkTheme.SECONDARY} to="/about">О сайте</AppLink>
-      </div>
-    </div>
-  );
+            <div className={scss.links}>
+                <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={scss.mainLink}>Главная</AppLink>
+                <AppLink theme={AppLinkTheme.SECONDARY} to="/about">О сайте</AppLink>
+            </div>
+        </div>
+    );
 };

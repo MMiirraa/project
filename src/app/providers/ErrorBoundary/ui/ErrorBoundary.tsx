@@ -1,5 +1,5 @@
-import React, { ErrorInfo, ReactNode, Suspense } from 'react';
-import { PageError } from 'widgets/PageError';
+import React, { ErrorInfo, ReactNode, Suspense } from "react";
+import { PageError } from "widgets/PageError";
 // import { withTranslation } from "react-i18next";
 
 interface ErrorBoundaryProps {
@@ -28,8 +28,8 @@ export default class ErrorBoundary
   }
 
   render() {
-    const { hasError } = this.state;
-    const { children } = this.props;
+    const { hasError } = this.state
+    const { children } = this.props
 
     if (hasError) {
       // Можно отрендерить запасной UI произвольного вида
