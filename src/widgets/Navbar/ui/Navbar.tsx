@@ -4,7 +4,7 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import scss from './Navbar.module.scss';
 
 interface NavbarProps {
-  className?: string,
+    className?: string,
 }
 
 export const Navbar = (props: NavbarProps) => {

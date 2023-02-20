@@ -6,7 +6,7 @@ import DarkIcon from 'shared/assets/icons/DarkIcon.svg';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
 interface ThemeSwitcherProps {
-  className?: string;
+    className?: string;
 }
 
 export const ThemeSwitcher = (props: ThemeSwitcherProps) => {

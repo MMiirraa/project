@@ -1,14 +1,14 @@
 import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import './Louder.scss'
+import './Louder.scss';
 
 interface LouderProps {
     className?: string;
 }
 
 export const Louder: React.FC<LouderProps> = (props: LouderProps) => {
-    const { className } = props
+    const { className } = props;
     return (
-        <div className={classNames('lds-hourglass', {}, [className])}></div>
+        <div className={classNames('lds-hourglass', {}, [className])} />
     );
 };

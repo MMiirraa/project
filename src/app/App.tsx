@@ -5,23 +5,22 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { AppRouter } from './providers/routers';
 import './styles/index.scss';
+import { PageLouder } from 'widgets/PageLouder/ui/PageLouder';
 
 const App = () => {
-  const { theme } = useTheme();
+    const { theme } = useTheme();
 
-
-
-  return (
-    <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback="loading...">
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          <AppRouter />
+    return (
+        <div className={classNames('app', {}, [theme])}>
+            <Suspense fallback={<PageLouder />}>
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
-      </Suspense>
-    </div>
-  );
+    );
 };
 
 export default App;
