@@ -3,9 +3,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
+import { PageLouder } from 'widgets/PageLouder/ui/PageLouder';
 import { AppRouter } from './providers/routers';
 import './styles/index.scss';
-import { PageLouder } from 'widgets/PageLouder/ui/PageLouder';
 
 const App = () => {
     const { theme } = useTheme();
