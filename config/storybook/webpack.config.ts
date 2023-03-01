@@ -1,7 +1,23 @@
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
-// import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
+
+const cssLouder = {
+    test: /\.s[ac]ss$/i,
+    use: [
+        'style-loader',
+        {
+            loader: 'css-loader',
+            options: {
+                modules: {
+                    auto: (resPath: string) => resPath.includes('.module.'),
+                    localIdentName: '[path][name]__[local]--[hash:base64:8]',
+                },
+            },
+        },
+        'sass-loader',
+    ],
+};
 
 export default ({ config }: {config: webpack.Configuration}) => {
     const paths: BuildPaths = {
@@ -27,35 +43,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
-
-    config.module?.rules?.push({
-            test: /\.(scss)$/,
-            use: [
-              {
-                loader: 'style-loader',
-              },
-              {
-                loader: 'css-loader',
-              },
-              {
-                loader: 'postcss-loader',
-                options: {
-                  postcssOptions: {
-                    plugins: function () {
-                      return [require('precss'), require('autoprefixer')];
-                    },
-                  },
-                },
-              },
-              {
-                loader: require.resolve('sass-loader'),
-                options: {
-                  implementation: require('sass'),
-                },
-              },
-            ],
-          });
-    // config.module.rules.push(buildCssLoader(true));
+    config.module?.rules?.push(cssLouder)
 
     return config;
 };
