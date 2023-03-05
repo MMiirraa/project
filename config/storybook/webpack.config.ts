@@ -1,23 +1,7 @@
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
 import { BuildPaths } from '../build/types/config';
-
-const cssLouder = {
-    test: /\.s[ac]ss$/i,
-    use: [
-        'style-loader',
-        {
-            loader: 'css-loader',
-            options: {
-                modules: {
-                    auto: (resPath: string) => resPath.includes('.module.'),
-                    localIdentName: '[path][name]__[local]--[hash:base64:8]',
-                },
-            },
-        },
-        'sass-loader',
-    ],
-};
+import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
 export default ({ config }: {config: webpack.Configuration}) => {
     const paths: BuildPaths = {
@@ -29,6 +13,8 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config.resolve?.modules?.push(paths.src);
     config.resolve?.extensions?.push('.ts', '.tsx');
 
+    // находит правило, которое обрабатывает svg, если нашел 
+    // исключаем обработки svg для этого правила - возьмет правило ниже 28стр.
     // @ts-ignore
     // eslint-disable-next-line no-param-reassign
     config.module?.rules && (config.module.rules = config.module?.rules?.map((rule: RuleSetRule) => {
@@ -43,7 +29,9 @@ export default ({ config }: {config: webpack.Configuration}) => {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
-    config.module?.rules?.push(cssLouder)
+
+    const cssLoader = buildCssLoader(true)
+    config.module?.rules?.push(cssLoader)
 
     return config;
 };
