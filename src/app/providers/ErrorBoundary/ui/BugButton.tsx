@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 
 interface BugButtonProps {
@@ -7,6 +8,7 @@ interface BugButtonProps {
 }
 
 export const BugButton: React.FC<BugButtonProps> = (props: BugButtonProps) => {
+    const { t } = useTranslation();
     const [error, setError] = React.useState(false);
 
     const onThrow = () => setError(true);
@@ -17,7 +19,7 @@ export const BugButton: React.FC<BugButtonProps> = (props: BugButtonProps) => {
 
     return (
         <Button onClick={onThrow}>
-            throw Error
+            {t('Создать ошибку')}
         </Button>
     );
 };
