@@ -1,0 +1,18 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "i18n-ally.localesPaths": [
+    "public/locales",
+    "src/shared/config/i18n"
+  ],
+  // "[scss]": {
+  //     "editor.defaultFormatter": "vscode.css-language-features"
+  // },
+  // "javascript.preferences.importModuleSpecifier": "non-relative",
+  "stylelint.enable": true,
+  "css.validate": true,
+  "scss.validate": true,
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+}
