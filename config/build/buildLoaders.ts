@@ -53,6 +53,6 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         svgLouder,
         bableLouder,
         typescriptLoader,
-        buildCssLoader(options.isDev)
+        buildCssLoader(options.isDev),
     ];
 }
