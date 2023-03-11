@@ -13,13 +13,11 @@ export const Navbar = (props: NavbarProps) => {
         className,
     } = props;
 
-    const { t } = useTranslation();
     return (
         <div className={classNames(scss.Navbar, {}, [className])}>
 
             <div className={scss.links}>
-                <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={scss.mainLink}>{t('Главная страница')}</AppLink>
-                <AppLink theme={AppLinkTheme.SECONDARY} to="/about">{t('О сайте')}</AppLink>
+                /
             </div>
         </div>
     );
