@@ -35,12 +35,11 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
     const mods: Record<string, boolean> = {
         [scss.square]: square,
-    }
+    };
     const additional = [
         scss[theme],
         scss[size],
-    ]
-        
+    ];
 
     return (
         <button

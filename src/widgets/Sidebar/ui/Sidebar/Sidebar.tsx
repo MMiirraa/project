@@ -7,7 +7,7 @@ import { Button, ButtonTheme, ButtonSize } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
-import MainIcon from 'shared/assets/icons/main-20-20.svg'
+import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import scss from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -28,33 +28,33 @@ export const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
             data-testid="sidebar"
             className={classNames(scss.Sidebar, { [scss.collapsed]: collapsed }, [className])}
         >
-            <Button 
-                data-testid="sidebar-toggle" 
+            <Button
+                data-testid="sidebar-toggle"
                 onClick={onToggle}
                 className={scss.collapseBtn}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 square
                 size={ButtonSize.L}
             >
-                {collapsed ? ">" : "<"}
+                {collapsed ? '>' : '<'}
             </Button>
             <div className={scss.items}>
-                <AppLink 
-                    theme={AppLinkTheme.SECONDARY} 
-                    to={RoutePath.main} 
+                <AppLink
+                    theme={AppLinkTheme.SECONDARY}
+                    to={RoutePath.main}
                     className={scss.item}
                 >
-                    <MainIcon className={scss.icon}/>
+                    <MainIcon className={scss.icon} />
                     <span className={scss.link}>
                         {t('Главная страница')}
                     </span>
                 </AppLink>
-                <AppLink 
-                    theme={AppLinkTheme.SECONDARY} 
+                <AppLink
+                    theme={AppLinkTheme.SECONDARY}
                     to={RoutePath.about}
                     className={scss.item}
                 >
-                    <AboutIcon className={scss.icon}/>
+                    <AboutIcon className={scss.icon} />
                     <span className={scss.link}>
                         {t('О сайте', { ns: 'about' })}
                     </span>
@@ -62,9 +62,9 @@ export const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
             </div>
             <div className={scss.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher 
-                    short={collapsed} 
-                    className={scss.lang} 
+                <LangSwitcher
+                    short={collapsed}
+                    className={scss.lang}
                 />
             </div>
         </div>
