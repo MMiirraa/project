@@ -2,7 +2,7 @@ name: linting, testing, building
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: 
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
   pull_request:
     branches: [ main ]
 jobs:
@@ -21,11 +21,26 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: npm install
+
       - name: build project
         run: npm run build:prod
+        if: always()
       - name: linting typescript
         run: npm run lint:ts
+        if: always()
       - name: linting css
         run: npm run lint:scss
       - name: unit testing
+        if: always()
         run: npm run test:unit
+      - name: build storybook
+        run: npm run storybook:build
+        if: always()
+
+
+#         Если скриншотные тесты на gihub-actions у вас падают:
+#         Docker устанавливать не стал. 
+#         В файле ямлике поле ``runs-on: ubuntu-latest`` заменил на ``runs-on: windows-2019``, 
+#         затем отключил это правило -- ``'linebreak-style': 'off',`` в .eslintrc.js.
+      # - name: screenshot testing
+      #   run: npm run test:ui:ci
