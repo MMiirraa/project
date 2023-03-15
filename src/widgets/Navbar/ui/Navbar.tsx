@@ -1,22 +1,16 @@
-import React, { useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
 import { Modal } from 'shared/ui/Modal/Modal';
-import scss from './Navbar.module.scss';
+import React, { useCallback, useState } from 'react';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
-    className?: string,
+    className?: string;
 }
 
-export const Navbar = (props: NavbarProps) => {
-    const {
-        className,
-    } = props;
-
+export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
-
     const [isAuthModal, setIsAuthModal] = useState(false);
 
     const onToggleModal = useCallback(() => {
@@ -24,16 +18,17 @@ export const Navbar = (props: NavbarProps) => {
     }, []);
 
     return (
-        <div className={classNames(scss.Navbar, {}, [className])}>
+        <div className={classNames(cls.Navbar, {}, [className])}>
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
-                className={scss.links}
+                className={cls.links}
                 onClick={onToggleModal}
             >
                 {t('Войти')}
             </Button>
             <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                {t('Войти')}
+                {/* eslint-disable-next-line */}
+                {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.')}
             </Modal>
         </div>
     );

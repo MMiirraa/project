@@ -6,11 +6,9 @@ import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
-        // использует наш html как образец для build
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
-        // для отображения загрузки лоудера - сборки
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
