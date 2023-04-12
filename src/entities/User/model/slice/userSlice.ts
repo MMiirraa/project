@@ -6,10 +6,9 @@ const initialState: UserSchema = {};
 export const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {
-
-    },
+    reducers: {},
 });
 
+// Action creators are generated for each case reducer function
 export const { actions: userActions } = userSlice;
 export const { reducer: userReducer } = userSlice;

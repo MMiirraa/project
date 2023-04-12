@@ -12,9 +12,9 @@
   "О сайте": "About us",
   "Переключить": "Переключить",
   "Короткий язык": "En",
-  "Войти": "Signin",
+  "Войти": "Login",
   "increment": "increment",
   "decrement": "decrement",
-  "Введите username": "your username",
-  "Введите пароль": "yout password"
+  "Введите username": "Введите username",
+  "Введите пароль": "Введите пароль"
 }

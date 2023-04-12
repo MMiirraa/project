@@ -1,25 +1,25 @@
-import { DeepPartial } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { CounterSchema } from '../types/counterSchema';
 import { counterReducer, counterActions } from './counterSlice';
+import { CounterSchema } from '../types/counterSchema';
 
 describe('counterSlice.test', () => {
-    test('decremented', () => {
+    test('decrement', () => {
         const state: CounterSchema = { value: 10 };
+
         expect(
-            counterReducer(state, counterActions.decremented()),
+            counterReducer(state, counterActions.decrement()),
         ).toEqual({ value: 9 });
     });
-    test('incremented', () => {
+    test('increment', () => {
         const state: CounterSchema = { value: 10 };
+
         expect(
-            counterReducer(state, counterActions.incremented()),
+            counterReducer(state, counterActions.increment()),
         ).toEqual({ value: 11 });
     });
+
     test('should work with empty state', () => {
-        const state: CounterSchema = { value: 10 };
         expect(
-            counterReducer(undefined, counterActions.incremented()),
+            counterReducer(undefined, counterActions.increment()),
         ).toEqual({ value: 1 });
     });
 });
