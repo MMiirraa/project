@@ -7,40 +7,39 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
-import cls from './ProfileCard.module.scss'
 import { Input } from 'shared/ui/Input/Input';
+import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
-    children?: ReactNode;
 }
 
 export const ProfileCard: React.FC<ProfileCardProps> = (props: ProfileCardProps) => {
-   const {t} = useTranslation('profile')
+    const { t } = useTranslation('profile');
 
-   const {
-       className,
-   } = props
+    const {
+        className,
+    } = props;
 
-   const data = useSelector(getProfileData)
-   const isLoading = useSelector(getProfileIsLoading)
-   const error = useSelector(getProfileError)
+    const data = useSelector(getProfileData);
+    const isLoading = useSelector(getProfileIsLoading);
+    const error = useSelector(getProfileError);
 
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
             <div className={cls.header}>
-                <Text title={t('Профиль')}/>
+                <Text title={t('Профиль')} />
                 <Button theme={ButtonTheme.OUTLINE} className={cls.editBtn}>
                     {t('Редактировать')}
                 </Button>
             </div>
             <div className={cls.data}>
-                <Input 
+                <Input
                     value={data?.first}
                     placeholder={t('Ваше имя')}
                     className={cls.input}
                 />
-                <Input 
+                <Input
                     value={data?.first}
                     placeholder={t('Ваше фамилия')}
                     className={cls.input}

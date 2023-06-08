@@ -7,24 +7,23 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 const reducers: ReducersList = {
     profile: profileReducer,
-}
+};
 
 interface ProfilePageProps {
     className?: string;
-    children?: ReactNode;
 }
 
 const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
-    const {t} = useTranslation()
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     const {
         className,
-    } = props
+    } = props;
 
     useEffect(() => {
-        dispatch(fetchProfileData())
-    }, [dispatch])
+        dispatch(fetchProfileData());
+    }, [dispatch]);
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

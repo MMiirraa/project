@@ -4,8 +4,8 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { SidebarItemType } from 'widgets/Sidebar/model/items';
-import cls from './SidebarItem.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
     item: SidebarItemType;
@@ -13,13 +13,13 @@ interface SidebarItemProps {
 }
 
 export const SidebarItem: React.FC<SidebarItemProps> = memo((props: SidebarItemProps) => {
-   const {t} = useTranslation()
+    const { t } = useTranslation();
 
-   const {
-       item,
-       collapsed,
-       ...otherProps
-   } = props
+    const {
+        item,
+        collapsed,
+        ...otherProps
+    } = props;
 
     return (
         <AppLink
