@@ -20,5 +20,7 @@
   "Вы ввели неверный логин или пароль": "Uncorrect username or password",
   "Выйти": "Выйти",
   "Профиль": "Progile page",
-  "О сайте": "About page"
+  "О сайте": "About page",
+  "Укажите валюту": "Specify currency",
+  "Укажите страну": "Specify country"
 }
