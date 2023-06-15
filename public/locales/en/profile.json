@@ -2,5 +2,11 @@
     "Профиль": "Profile",
     "Редактировать": "Change",
     "Ваше имя": "First name",
-    "Ваше фамилия": "Last name"
+    "Ваше фамилия": "Last name",
+    "Произошла ошибка": "An error has occurred",
+    "Попробуйте перезагрузить страницу": "Try reloading the page",
+    "Отменить": "Cancel",
+    "Сохранить": "Save",
+    "Ваш возраст": "Yor age",
+    "Ваш город": "Yor city"
 }
