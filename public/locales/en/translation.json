@@ -9,8 +9,18 @@
   "Обновить страницу": "Reload page",
   "throw error": "throw error",
   "Главная": "Main",
-  "О сайте": "About us",
   "Переключить": "Переключить",
   "Короткий язык": "En",
-  "Войти": "Войти"
+  "Войти": "Login",
+  "increment": "increment",
+  "decrement": "decrement",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Auth form",
+  "Вы ввели неверный логин или пароль": "Uncorrect username or password",
+  "Выйти": "Выйти",
+  "Профиль": "Progile page",
+  "О сайте": "About page",
+  "Укажите валюту": "Specify currency",
+  "Укажите страну": "Specify country"
 }

@@ -40,7 +40,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        "i18next/no-literal-string": [
+        'i18next/no-literal-string': [
             'error',
             {
                 markupOnly: true,
@@ -50,11 +50,14 @@ module.exports = {
         'max-len': ['error', { 'ignoreComments': true, "code": 130 }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
-        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-        "react-hooks/exhaustive-deps": "error", // Checks effect 
+        'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+        'react-hooks/exhaustive-deps': 'error', // Checks effect 
+        'no-param-reassign': 'off',
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [
         {
