@@ -22,7 +22,8 @@ export function componentRender(component: ReactNode, options: componentRenderOp
                 <I18nextProvider i18n={i18nForTests}>
                     {component}
                 </I18nextProvider>
-            </StoreProvider>,
-        </MemoryRouter>
+            </StoreProvider>
+            ,
+        </MemoryRouter>,
     );
 }

@@ -18,13 +18,13 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         setCollapsed((prev) => !prev);
     };
 
-    const itemsList = useMemo(() => SidebarItems.map(item => (
-        <SidebarItem 
+    const itemsList = useMemo(() => SidebarItems.map((item) => (
+        <SidebarItem
             item={item}
             collapsed={collapsed}
             key={item.path}
         />
-    )), [collapsed])
+    )), [collapsed]);
 
     return (
         <div

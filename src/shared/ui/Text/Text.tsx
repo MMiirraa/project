@@ -33,7 +33,7 @@ export const Text = memo((props: TextProps) => {
     const mods: Mods = {
         [cls[theme]]: true,
         [cls[align]]: true,
-    }
+    };
 
     return (
         <div className={classNames(cls.Text, mods, [className])}>

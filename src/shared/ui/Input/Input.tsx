@@ -1,9 +1,9 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, {
-    InputHTMLAttributes, 
-    memo, 
-    useEffect, 
-    useRef, 
+    InputHTMLAttributes,
+    memo,
+    useEffect,
+    useRef,
     useState,
 } from 'react';
 import cls from './Input.module.scss';
@@ -61,8 +61,8 @@ export const Input = memo((props: InputProps) => {
     };
 
     const mods: Mods = {
-        [cls.readonly]: readonly
-    }
+        [cls.readonly]: readonly,
+    };
 
     return (
         <div className={classNames(cls.InputWrapper, mods, [className])}>

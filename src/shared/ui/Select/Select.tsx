@@ -1,7 +1,7 @@
 import React, { ChangeEvent, ReactNode, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import cls from './Select.module.scss'
+import cls from './Select.module.scss';
 
 export interface SelectOption {
     value: string;
@@ -18,7 +18,7 @@ interface SelectProps {
 }
 
 export const Select: React.FC<SelectProps> = (props: SelectProps) => {
-    const {t} = useTranslation()
+    const { t } = useTranslation();
 
     const {
         className,
@@ -27,29 +27,27 @@ export const Select: React.FC<SelectProps> = (props: SelectProps) => {
         value,
         readonly,
         onChange,
-    } = props
+    } = props;
 
-    const optionsList = useMemo(() => {
-        return options?.map(opt => (
-            <option className={cls.otions} value={opt.value} key={opt.value}>{opt.content}</option>
-        ))
-    }, [options])
+    const optionsList = useMemo(() => options?.map((opt) => (
+        <option className={cls.otions} value={opt.value} key={opt.value}>{opt.content}</option>
+    )), [options]);
 
     const onChangeHendler = (e: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value)
-    }
+        onChange?.(e.target.value);
+    };
 
     const mods: Mods = {
 
-    }
+    };
 
     return (
         <div className={classNames(cls.Wrapper, mods, [className])}>
             {label && <span className={cls.label}>{`${label}>`}</span>}
-            <select 
-                disabled={readonly} 
-                className={cls.select} 
-                value={value} 
+            <select
+                disabled={readonly}
+                className={cls.select}
+                value={value}
                 onChange={onChangeHendler}
             >
                 {optionsList}

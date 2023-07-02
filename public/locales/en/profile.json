@@ -10,5 +10,11 @@
     "Ваш возраст": "Yor age",
     "Ваш город": "Yor city",
     "Имя пользователя": "User name",
-    "Укажите валюту": "Specify currency"
+    "Укажите валюту": "Specify currency",
+    "Сурверная ошибка": "Server error",
+    "Данные не указаны": "Data not specified",
+    "Имя пользователя и фамилия обязательны": "Username and surname are required",
+    "Некорректный регион": "Incorrect region",
+    "Некорректный возраст": "Incorrect age",
+    "нет картинки": "no picture"
 }

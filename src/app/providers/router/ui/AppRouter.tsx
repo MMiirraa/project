@@ -5,14 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 
-const AppRouter = () => {
-
+function AppRouter() {
     const isAuth = useSelector(getUserAuthData);
-    const routes = useMemo(() => {
-        return Object.values(routeConfig).filter(route => {
-            return (route.authOnly && !isAuth) ? false : true
-        })
-    }, [isAuth])
+    const routes = useMemo(() => Object.values(routeConfig).filter((route) => (!((route.authOnly && !isAuth)))), [isAuth]);
 
     return (
         <Routes>
@@ -30,7 +25,7 @@ const AppRouter = () => {
                 />
             ))}
         </Routes>
-    )
-};
+    );
+}
 
 export default memo(AppRouter);

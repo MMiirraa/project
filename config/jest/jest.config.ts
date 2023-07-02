@@ -9,6 +9,7 @@ export default {
     globals: {
         __IS_DEV__: true,
         __API__: '',
+        __PROJECT__: 'jest',
     },
     clearMocks: true,
     testEnvironment: 'jsdom',
@@ -25,7 +26,7 @@ export default {
     ],
     moduleDirectories: [
         'node_modules',
-        "src"
+        'src',
     ],
     modulePaths: [
         '<rootDir>src',
